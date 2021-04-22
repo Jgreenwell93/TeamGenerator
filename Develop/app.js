@@ -90,6 +90,28 @@ const engineerQuestions = [
 ]
 
 //Manager Questions
+const managerQuestions = [
+    {
+        type: 'input',
+        message: 'Name?',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'ID?:',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'Email?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'Office Number?',
+        name: 'officeNumber',
+    }
+]
 
 //Prompts user if they wish to add an employee. 
 //If no, page is rendered.
