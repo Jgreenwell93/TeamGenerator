@@ -135,5 +135,24 @@ const addNewEmployee = () => {
 //Asks user what type of employee they wish to add 
 //(Manager, Engineer, Intern)
 
+const employeeRole = () => {
+    inquirer
+        .prompt(roleQuestion)
+        .then(({ role }) => {
+            switch (role) {
+                case 'Manager':
+                    return addManager()
+                    break;
+                case 'Engineer':
+                    return addEngineer()
+                    break;
+                case 'Intern':
+                    return addIntern()
+                    break;
+            }
+        })
+}
+
+
 //functions (addManager, addEngineer, addIntern) prompt role specific questions ,
 //push the object to the employees array and callback the addNewEmployee function again. 
