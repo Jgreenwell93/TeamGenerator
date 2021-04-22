@@ -13,16 +13,30 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 
 //Global variables
+const employees = [];
+
 
 //Inquirer Questions 
 
-//Questions that start at initialization and after employee object is created
+
+//Questions that start initialization and after employee object is created
+const wantNewEmp = [
+    {
+        type: 'list',
+        message: 'Add new employee?',
+        name: 'newMember',
+        choices: ['Add', 'Done!',]
+    },
+]
 
 //Role question (What subclass of Employee to create)
 
+
 //Intern Questions
 
+
 //Engineer Questions
+
 
 //Manager Questions
 
