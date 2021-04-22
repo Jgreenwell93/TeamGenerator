@@ -201,3 +201,8 @@ const addIntern = () => {
 }
 
 
+const init = () => {
+    addNewEmployee();
+}
+
+init();
