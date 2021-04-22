@@ -18,6 +18,25 @@ const employees = [];
 
 //Inquirer Questions 
 
+//Prompts user if they wish to add an employee. 
+//If no, page is rendered.
+//If yes, calls employeeRole
+const addNewEmployee = () => {
+    inquirer
+        .prompt(wantNewEmp)
+        .then(({ newMember }) => {
+            switch (newMember) {
+                case 'Add':
+                    employeeRole()
+                    break;
+                case 'Done!':
+                    fs.writeFile(outputPath, render(employees), (err) => {
+                        err ? console.error(err) : console.log('Success!')})
+                    break;
+            }
+        })
+}
+
 
 //Questions that start initialization and after employee object is created
 const wantNewEmp = [
@@ -41,28 +60,49 @@ const roleQuestion = [
     
 ]
 
-//Intern Questions
-const internQuestions = [
+//Asks user what type of employee they wish to add 
+//(Manager, Engineer, Intern)
+
+const employeeRole = () => {
+    inquirer
+        .prompt(roleQuestion)
+        .then(({ role }) => {
+            switch (role) {
+                case 'Manager':
+                    return addManager()
+                    break;
+                case 'Engineer':
+                    return addEngineer()
+                    break;
+                case 'Intern':
+                    return addIntern()
+                    break;
+            }
+        })
+}
+
+//Manager Questions
+const managerQuestions = [
     {
-        Type: 'input',
-        Message: 'Name?:',
+        type: 'input',
+        message: 'Name?',
         name: 'name',
     },
     {
-        Type: 'input',
-        Message: 'ID?:',
+        type: 'input',
+        message: 'ID?:',
         name: 'id',
     },
     {
-        Type: 'input',
-        message: 'Email?:',
+        type: 'input',
+        message: 'Email?',
         name: 'email',
     },
     {
-        Type: 'input',
-        message: 'School?:',
-        name: 'school',
-    },
+        type: 'input',
+        message: 'Office Number?',
+        name: 'officeNumber',
+    }
 ]
 
 //Engineer Questions
@@ -89,69 +129,32 @@ const engineerQuestions = [
     }
 ]
 
-//Manager Questions
-const managerQuestions = [
+
+//Intern Questions
+const internQuestions = [
     {
-        type: 'input',
-        message: 'Name?',
+        Type: 'input',
+        Message: 'Name?:',
         name: 'name',
     },
     {
-        type: 'input',
-        message: 'ID?:',
+        Type: 'input',
+        Message: 'ID?:',
         name: 'id',
     },
     {
-        type: 'input',
-        message: 'Email?',
+        Type: 'input',
+        message: 'Email?:',
         name: 'email',
     },
     {
-        type: 'input',
-        message: 'Office Number?',
-        name: 'officeNumber',
-    }
+        Type: 'input',
+        message: 'School?:',
+        name: 'school',
+    },
 ]
 
-//Prompts user if they wish to add an employee. 
-//If no, page is rendered.
-//If yes, calls employeeRole
-const addNewEmployee = () => {
-    inquirer
-        .prompt(wantNewEmp)
-        .then(({ newMember }) => {
-            switch (newMember) {
-                case 'Add':
-                    employeeRole()
-                    break;
-                case 'Done!':
-                    fs.writeFile(outputPath, render(employees), (err) => {
-                        err ? console.error(err) : console.log('Success!')})
-                    break;
-            }
-        })
-}
 
-//Asks user what type of employee they wish to add 
-//(Manager, Engineer, Intern)
-
-const employeeRole = () => {
-    inquirer
-        .prompt(roleQuestion)
-        .then(({ role }) => {
-            switch (role) {
-                case 'Manager':
-                    return addManager()
-                    break;
-                case 'Engineer':
-                    return addEngineer()
-                    break;
-                case 'Intern':
-                    return addIntern()
-                    break;
-            }
-        })
-}
 
 
 //functions (addManager, addEngineer, addIntern) prompt role specific questions ,
