@@ -66,7 +66,28 @@ const internQuestions = [
 ]
 
 //Engineer Questions
-
+const engineerQuestions = [
+    {
+        type: 'input',
+        message: 'Name?:',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'ID?:',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'Email?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'GitHub Username?:',
+        name: 'github',
+    }
+]
 
 //Manager Questions
 
