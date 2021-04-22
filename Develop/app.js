@@ -116,6 +116,21 @@ const managerQuestions = [
 //Prompts user if they wish to add an employee. 
 //If no, page is rendered.
 //If yes, calls employeeRole
+const addNewEmployee = () => {
+    inquirer
+        .prompt(wantNewEmp)
+        .then(({ newMember }) => {
+            switch (newMember) {
+                case 'Add':
+                    employeeRole()
+                    break;
+                case 'Done!':
+                    fs.writeFile(outputPath, render(employees), (err) => {
+                        err ? console.error(err) : console.log('Success!')})
+                    break;
+            }
+        })
+}
 
 //Asks user what type of employee they wish to add 
 //(Manager, Engineer, Intern)
