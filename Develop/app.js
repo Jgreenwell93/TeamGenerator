@@ -42,7 +42,28 @@ const roleQuestion = [
 ]
 
 //Intern Questions
-
+const internQuestions = [
+    {
+        Type: 'input',
+        Message: 'Name?:',
+        name: 'name',
+    },
+    {
+        Type: 'input',
+        Message: 'ID?:',
+        name: 'id',
+    },
+    {
+        Type: 'input',
+        message: 'Email?:',
+        name: 'email',
+    },
+    {
+        Type: 'input',
+        message: 'School?:',
+        name: 'school',
+    },
+]
 
 //Engineer Questions
 
