@@ -4,7 +4,7 @@ const Employee = require("../lib/Employee");
 
 class Engineer extends Employee {
     constructor(Github){
-        super (name, id, email);
+        super(name, id, email);
         this.github=Github;
     }
 
