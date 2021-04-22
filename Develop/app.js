@@ -30,7 +30,16 @@ const wantNewEmp = [
 ]
 
 //Role question (What subclass of Employee to create)
-
+const roleQuestion = [
+    
+    {
+        type: 'list',
+        message: 'Employee role?',
+        name: 'role',
+        choices: ['Manager','Engineer','Intern']
+    },
+    
+]
 
 //Intern Questions
 
