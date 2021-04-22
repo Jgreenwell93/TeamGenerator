@@ -16,7 +16,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 //Inquirer Questions 
 
-//Questions that fire off at initialization and after employee object is instantiated
+//Questions that start at initialization and after employee object is created
 
 //Role question (What subclass of Employee to create)
 
