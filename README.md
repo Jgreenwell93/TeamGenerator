@@ -1,6 +1,7 @@
 # TeamGenerator
 
-<h1>Creates a List of team members and their roles as well as specific details for different roles.</h1>
+<h1> A small application for creating a list of team members, their roles, and specific details for different roles
+.</h1>
 
 <hr>
 
